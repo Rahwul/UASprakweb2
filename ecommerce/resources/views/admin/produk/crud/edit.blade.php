@@ -2,7 +2,7 @@
 
 @section('content')
 @foreach ($produk as $prod)
-<form method="post" action="{{ url('produk/update/'.$prod->id) }}" enctype="multipart/form-data">
+<form method="post" action="{{ url('admin/produk/update/'.$prod->id) }}" enctype="multipart/form-data">
     {{ csrf_field() }}
     <h4 style="text-align: center">Form Edit Data</h4>
   <div class="form-group row">

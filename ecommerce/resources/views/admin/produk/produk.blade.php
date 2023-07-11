@@ -9,7 +9,9 @@
     </ol>
     <div class="card mb-4">
         <div class="card-header">
-            <a href="{{ url('produk/create') }}" class="btn btn-primary">Tambah Data</a>
+            @if (Auth::user()->roles == 'admin')
+            <a class="btn btn-primary" href="{{url('admin/produk/create')}}">Tambah</a>
+            @endif
         </div>
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
@@ -48,8 +50,10 @@
                                 <td>{{ $prod->deskripsi }}</td>
                                 <td>{{ $prod->nama_kategori }}</td>
                                 <td>
-                                    <a href="{{ url('produk/edit/'.$prod->id) }}" class="btn btn-success">Edit</a>
-                                    <a href="{{ url('produk/delete/'.$prod->id) }}" class="btn btn-danger">Delete</a>
+                                    <a href="{{ url('admin/produk/edit/'.$prod->id) }}" class="btn btn-success">Edit</a>
+                                    @if (Auth::user()->roles == 'admin')
+                                    <a href="{{ url('admin/produk/delete/'.$prod->id) }}" class="btn btn-danger">Delete</a>
+                                    @endif
                                 </td>
                             </tr>
                             @php

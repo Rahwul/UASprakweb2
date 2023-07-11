@@ -45,7 +45,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ url('/produk') }}" class="nav-link active">
+                <a href="{{ url('admin/produk') }}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Produk</p>
                 </a>

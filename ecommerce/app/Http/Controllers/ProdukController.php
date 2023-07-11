@@ -55,7 +55,7 @@ class ProdukController extends Controller
         $produk->gambar = $namaGambar;
         $produk->kategori_produk_id = $request->kategori_produk_id;
         $produk->save();
-        return redirect('/produk'); // redirect ke halaman produk
+        return redirect('admin/produk'); // redirect ke halaman produk
 
     }
 

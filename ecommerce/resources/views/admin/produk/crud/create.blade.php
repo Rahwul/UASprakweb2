@@ -1,7 +1,7 @@
 @extends('admin.layout.app')
 
 @section('content')
-<form method="post" action="{{ url('produk/store') }}" enctype="multipart/form-data">
+<form method="post" action="{{ url('admin/produk/store') }}" enctype="multipart/form-data">
     {{ csrf_field() }}
     <h4 style="text-align: center">Form Tambah Data</h4>
   <div class="form-group row">

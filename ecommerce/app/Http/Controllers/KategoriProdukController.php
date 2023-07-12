@@ -13,7 +13,7 @@ class KategoriProdukController extends Controller
     public function index()
     {
         $kategori_produk = new KategoriProduk();
-        return view('admin.produk.kategori_produk', ['kategori_produk' => $kategori_produk->tampil()]);
+        return view('admin.produk.kategori', ['kategori_produk' => $kategori_produk->tampil()]);
     }
 
     /**

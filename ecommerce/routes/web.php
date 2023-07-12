@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\KategoriProdukController;
 use App\Http\Controllers\PesananController;
 
 use Illuminate\Support\Facades\Auth;
@@ -40,6 +41,7 @@ Route::group(['middleware' => 'auth', 'peran:admin-manager'], function () {
         Route::post('/pesanan/update/{id}', [PesananController::class, 'update']);
         Route::get('/pesanan/delete/{id}', [PesananController::class, 'destroy']);
         Route::get('/pesanan/detail/{id}', [PesananController::class, 'show']);
+        Route::get('/kategori_produk', [KategoriProdukController::class, 'index']);
     });
 });
 

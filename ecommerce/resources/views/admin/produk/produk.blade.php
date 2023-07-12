@@ -10,7 +10,7 @@
     <div class="card mb-4">
         <div class="card-header">
             @if (Auth::user()->roles == 'admin')
-            <a class="btn btn-primary" href="{{url('admin/produk/create')}}">Tambah</a>
+                <a class="btn btn-primary" href="{{ url('admin/produk/create') }}">Tambah</a>
             @endif
         </div>
         <div class="card-header">
@@ -50,9 +50,12 @@
                                 <td>{{ $prod->deskripsi }}</td>
                                 <td>{{ $prod->nama_kategori }}</td>
                                 <td>
-                                    <a href="{{ url('admin/produk/edit/'.$prod->id) }}" class="btn btn-success">Edit</a>
+                                    <a href="{{ url('admin/produk/detail/' . $prod->id) }}"
+                                        class="btn btn-primary">Detail</a>
+                                    <a href="{{ url('admin/produk/edit/' . $prod->id) }}" class="btn btn-success">Edit</a>
                                     @if (Auth::user()->roles == 'admin')
-                                    <a href="{{ url('admin/produk/delete/'.$prod->id) }}" class="btn btn-danger">Delete</a>
+                                        <a href="{{ url('admin/produk/delete/' . $prod->id) }}"
+                                            class="btn btn-danger">Delete</a>
                                     @endif
                                 </td>
                             </tr>

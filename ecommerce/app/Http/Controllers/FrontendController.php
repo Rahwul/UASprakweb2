@@ -12,4 +12,15 @@ class FrontendController extends Controller
         $produk = new Produk();
         return view('frontend.dashboard', ['produk' => $produk->tampil()]);
     }
+
+    public function show(string $id)
+    {
+        $produk = Produk::find($id);
+
+        if ($produk) {
+            return view('frontend.detail', ['produk' => $produk]);
+        } else {
+            return "Produk tidak ditemukan.";
+        }
+    }
 }

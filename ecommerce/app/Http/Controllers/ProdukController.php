@@ -64,7 +64,13 @@ class ProdukController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $produk = Produk::find($id);
+
+        if ($produk) {
+            return view('admin.produk.crud.detail', ['produk' => $produk]);
+        } else {
+            return "Produk tidak ditemukan.";
+        }
     }
 
     /**
